@@ -1,0 +1,33 @@
+{
+  "name": "tsusi",
+  "module": "src/index.ts",
+  "type": "module",
+  "author": "tkgling",
+  "license": "MIT",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun build src/index.ts --outdir dist",
+    "prepare": "husky",
+    "lint": "bunx @biomejs/biome lint --write src",
+    "format": "bunx @biomejs/biome format --write src",
+    "check": "bunx @biomejs/biome check --write src"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/cz-commitlint": "^19.2.0",
+    "@types/bun": "latest",
+    "commitizen": "^4.3.0",
+    "husky": "^9.1.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
