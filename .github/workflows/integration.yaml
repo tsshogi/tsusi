@@ -53,4 +53,4 @@ jobs:
           bun-version: latest
       - name: Test
         run: |
-          bun run test
+          bun test
