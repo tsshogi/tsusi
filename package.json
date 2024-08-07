@@ -1,7 +1,7 @@
 {
-  "name": "tsusi",
+  "name": "@tsshogi/tsusi",
   "module": "src/index.ts",
-  "types": "index.d.ts",
+  "types": "dist/index.d.ts",
   "type": "module",
   "author": "tkgling",
   "license": "MIT",
@@ -17,7 +17,8 @@
     "prepare": "husky",
     "lint": "bunx @biomejs/biome lint --write src",
     "format": "bunx @biomejs/biome format --write src",
-    "check": "bunx @biomejs/biome check --write src"
+    "check": "bunx @biomejs/biome check --write src",
+    "publish": "npm publish --access public"
   },
   "config": {
     "commitizen": {
@@ -37,11 +38,10 @@
     "typescript": "^5.0.0"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
   },
   "files": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "tsconfig.json"
+    "dist/**/*{.js,.d.ts}"
   ]
 }
