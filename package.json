@@ -1,13 +1,19 @@
 {
   "name": "tsusi",
   "module": "src/index.ts",
+  "types": "index.d.ts",
   "type": "module",
   "author": "tkgling",
   "license": "MIT",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsshogi/tsusi.git"
+  },
   "scripts": {
     "dev": "bun run --hot src/index.ts",
-    "build": "bun build src/index.ts --outdir dist",
+    "prebuild": "bun tsc --emitDeclarationOnly --isolatedDeclarations",
+    "build": "bun build src/index.ts --minify --outdir dist --target bun",
     "prepare": "husky",
     "lint": "bunx @biomejs/biome lint --write src",
     "format": "bunx @biomejs/biome format --write src",
@@ -29,5 +35,13 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "tsconfig.json"
+  ]
 }
