@@ -2,6 +2,7 @@ node_modules
 dist
 .wrangler
 .dev.vars
+.npmrc
 
 # Change them to your taste:
 package-lock.json
@@ -146,3 +147,4 @@ dist
 
 # Engine
 engine/*
+
