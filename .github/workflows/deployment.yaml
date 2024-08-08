@@ -20,7 +20,7 @@ jobs:
           registry-url: https://npm.pkg.github.com
           scope: '@tsshogi'
       - name: Install Dependencies
-        run: bun install --frozen-lockfile --production --ignore-scripts
+        run: bun install --frozen-lockfile --ignore-scripts
       - name: Build
         run: bun run build
       - uses: actions/setup-node@v4
