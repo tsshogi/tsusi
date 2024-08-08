@@ -1,7 +1,7 @@
 {
-  "name": "tsusi",
+  "name": "@tsshogi/tsusi",
   "module": "src/index.ts",
-  "types": "index.d.ts",
+  "types": "src/index.d.ts",
   "type": "module",
   "author": "tkgling",
   "license": "MIT",
@@ -12,8 +12,8 @@
   },
   "scripts": {
     "dev": "bun run --hot src/index.ts",
-    "prebuild": "bun tsc --emitDeclarationOnly --isolatedDeclarations",
-    "build": "bun build src/index.ts --minify --outdir dist --target bun",
+    "prebuild": "rimraf dist && tsup src/index.ts --dts-only --format esm --out-dir src",
+    "build": "bun build src/index.ts --outdir dist --target bun",
     "prepare": "husky",
     "lint": "bunx @biomejs/biome lint --write src",
     "format": "bunx @biomejs/biome format --write src",
@@ -31,7 +31,9 @@
     "@commitlint/cz-commitlint": "^19.2.0",
     "@types/bun": "latest",
     "commitizen": "^4.3.0",
-    "husky": "^9.1.4"
+    "husky": "^9.1.4",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.2.4"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

@@ -1,5 +1,6 @@
 node_modules
 dist
+src/index.d.ts
 .wrangler
 .dev.vars
 
@@ -144,5 +145,5 @@ dist
 # macOS
 .DS_Store
 
-# Engine
-engine/*
+# Node Package Manager
+.npmrc
