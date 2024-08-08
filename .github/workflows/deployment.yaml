@@ -7,7 +7,7 @@ on:
     types: [closed]
 jobs:
   deploy:
-    name: Deploy workers
+    name: Deploy to GitHub Package Registry
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-24.04
     steps:
@@ -20,7 +20,7 @@ jobs:
           registry-url: https://npm.pkg.github.com
           scope: '@tsshogi'
       - name: Install Dependencies
-        run: bun install --frozen-lockfile --production
+        run: bun install --frozen-lockfile --production --ignore-scripts
       - name: Build
         run: bun run build
       - uses: actions/setup-node@v4
